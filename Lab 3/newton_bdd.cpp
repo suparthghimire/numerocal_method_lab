@@ -14,7 +14,7 @@ int fact(int n) {
     if (n <= 0)return 1;
     return n * fact(n - 1);
 }
-float newton_forward_dIff(float xn[], float fxn[][MAX], float x) {
+float newton_backward_dIff(float xn[], float fxn[][MAX], float x) {
     for (int i = 1; i < MAX; i++)
         for (int j = MAX - 1; j >= i; j--)
             fxn[j][i] = fxn[j][i - 1] - fxn[j - 1][i - 1];
